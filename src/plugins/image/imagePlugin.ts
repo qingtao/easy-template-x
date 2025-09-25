@@ -19,6 +19,8 @@ interface ImagePluginContext {
     lastDrawingObjectId: Record<string, number>;
 }
 
+const imageRe = new RegExp('^data:(image/.+);base64,(.+)$');
+
 export class ImagePlugin extends TemplatePlugin {
 
     public readonly contentType = 'image';
@@ -29,6 +31,12 @@ export class ImagePlugin extends TemplatePlugin {
         if (!content || !content.source) {
             officeMarkup.modify.removeTag(tag);
             return;
+        }
+        if (typeof content.source === 'string') {
+            const image = imageRe.exec(content.source);
+            if (image) {
+                content.source = Buffer.from(image[2], 'base64');
+            }
         }
 
         // Add the image file into the archive
