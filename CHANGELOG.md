@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.0.3 - 2025-12-14](https://github.com/alonrbar/easy-template-x/tree/v7.0.3)
+
+### Fixed
+
+- Throw an informative error when a loop tag is found inside a content control.
+
+## [7.0.2 - 2025-10-25](https://github.com/alonrbar/easy-template-x/tree/v7.0.2)
+
+### Changed
+
+- Improved error message for misplaced image tags.
+
 ## [7.0.1 - 2025-09-15](https://github.com/alonrbar/easy-template-x/tree/v7.0.1)
 
 ### Fixed
@@ -529,7 +541,7 @@ The only exceptions are the "loop" content type which still uses the "#" opening
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-#### [Types of changes](http://keepachangelog.com)
+**[Types of changes:](http://keepachangelog.com)**
 
 - **Added** for new features.
 - **Changed** for changes in existing functionality.
